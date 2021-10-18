@@ -83,9 +83,9 @@ params:
         title: Risk Return of DJIA Industrial Average
         url: blogs/risk_return
       - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+        subtitle: India, Germany, US
+        title: GDP Components Analysis
+        url: blogs/gdp_countries
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum
