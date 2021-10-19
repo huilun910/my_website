@@ -81,7 +81,7 @@ params:
       - image: Shanghai.jpg
         subtitle: Yangtze River Delta
         title: Field Trip to China
-        url: blogs/china_field
+        url: blogs/risk_return
       - image: GDP_cover.jpg
         subtitle: India, Germany, US
         title: GDP Components Analysis
@@ -89,7 +89,7 @@ params:
       - image: bike.jpg
         subtitle: Monthly Changes in TfL bike rentals 
         title: Excess Rentals in TfL Bike Sharing
-        url: blogs/risk_return
+        url: blogs/tfl_bike
       - image: travel.jpg
         subtitle: Travel
         title: Album
