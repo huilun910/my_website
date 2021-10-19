@@ -5,7 +5,7 @@ theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
-  banner:
+  banner: 
     buttonText: Get Started
     subtitle: |-
       #A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
@@ -78,25 +78,25 @@ params:
         subtitle: Hello world
         title: About me
         url: blogs/about_me
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Risk Return of DJIA Industrial Average
-        url: blogs/risk_return
+      - image: Shanghai.jpg
+        subtitle: Yangtze River Delta
+        title: Field Trip to China
+        url: blogs/china_field
       - image: GDP_cover.jpg
         subtitle: India, Germany, US
         title: GDP Components Analysis
         url: blogs/gdp_countries
-      - image: pic04.jpg
-        subtitle: Yangtze River Delta
-        title: Field Trip to China
-        url: blogs/china_field
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/china_field
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: About Hangzhou
+      - image: bike.jpg
+        subtitle: Monthly Changes in TfL bike rentals 
+        title: Excess Rentals in TfL Bike Sharing
+        url: blogs/risk_return
+      - image: travel.jpg
+        subtitle: Travel
+        title: Album
+        url: blogs/album
+      - image: Hangzhou.jpg
+        subtitle: My Hometown
+        title: A Glimpse of Hangzhou
         url: blogs/hangzhou
   two:
     buttonText: Get Started
