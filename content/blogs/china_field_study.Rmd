@@ -5,12 +5,13 @@ categories:
 date: "2021-10-18"
 description: China's Soft Power
 draft: false
-image: Shanghai.jpg 
+image: Shanghai.jpg
 
 keywords: ""
 slug: china_field
 title: Chinese Business Enterprises and Soft Power
 ---
+
 
 
 # 1. Introduction
