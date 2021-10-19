@@ -2,13 +2,103 @@
 categories:
 - ""
 - ""
-date: "2017-10-31T21:28:43-05:00"
-description: ""
+date: "2021-10-18"
+description: China's Soft Power
 draft: false
-image: pic10.jpg
+image: shanghai.jpg
+
 keywords: ""
-slug: ipsum
-title: Ipsum
+slug: china_field
+title: Chinese Business Enterprises and Soft Power
 ---
 
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+
+
+# 1. Introduction
+
+Ranked as the world’s second-largest economy today , China has demonstrated tremendous development growth over the past 42 years. Apart from China’s remarkable economic growth, it also has an influential position in determining the world’s military order. According to the 2019 Military Strength Ranking , China has been listed as third for its military forces. China has successfully transformed the nation into one of the most powerful countries in aspects of its economic and political impacts, as well as its alliances and leadership, supported by the 2019 Best Countries report  , which places China as the third powerful country in the world. The rise of China has brought both opportunities and threats to other countries. The exportation of goods with relatively low cost and China’s huge consumption market has contributed to trade creation and foreign direct investment but may also result in a potential risk for dominating the markets. Besides, rising of China’s political power leads to suspects of spreading its political ideology. Despite these macroscale and objective facts, this essay will narrow down to ways that China has employed to establish its soft power and how it will influence China’s rising dominance in today’s world, which is not as quantifiable as its economic and political achievement. 
+
+As defined by Joseph S. Nye, soft power refers to as one’s capability to affect others to achieve intended targets  through attraction and seduction at a personal level. At a national level, soft power is highly valued as it serves as an indirect but crucial influence on other countries, which is opposed to hard power that is determined by the capability in terms of military and economy. Although the most significant source for the influence is culture and China has been regarded as emphasizing on its culture exports, this essay will not merely focus on culture exchange alone. Direct cultural emission methods such as cultural activities and entertainment still play a crucial role in today’s world, but we should look more into how China incorporates its culture and ideology with its development model. Additionally, this essay will also cover the soft power empowered by each region in China as their own strength to compete with other developing zones and contribute to China’s overall soft power.  
+
+The main arguments when approaching the analysis of this topic will be based on the author’s personal observations and experiences during the 2019 NUSRI Winter Program, which took place in the Yangtze River Delta region, supported by online resources and research paper.  
+
+# 2. Content  
+
+## 2.1 Soft Power Embedded in Regional Plans
+
+The Yangtze River Delta is made up of  Jiangsu, Zhejiang, and Anhui province, together with Shanghai city, and is currently the most prosperous region per capital in China . The 2019 Digital Economy and Talent Development Report  for China’s Yangtze River Delta Region reveals that Hangzhou, Shanghai, and Suzhou are ranked as top three cities for their digital economy index, which were also the main destinations during the winter program. The three cities were both renowned for their culture and economic strategies. Hangzhou and Suzhou are also described as ‘heavens on earth’  for their sceneries. However, one should read closely about how these cities have managed to integrate both of their natural and cultural characteristics with their implementation of plans to create a unique socio-cultural environment to attract talents from other regions as well as to enhance their images in the global market. 
+As the level of development progress varies in different regions of China, the migration population has been a common topic for years as people move to pursue a higher standard of living. In 2018, around 76 million migrant workers left their hometown for jobs in other provinces. According to data released by the Migrant Population Service Centre of National Health Commission PRC , the Yangtze River Delta Region and the Pearl River Delta have received the highest flux of migrants from other provinces in 2016, as shown in figure 1. 
+ 
+Figure 1
+Source: Migrant Population Service Centre of National Health Commission PRC
+
+Economic benefits definitely play an important role in appealing to talents. Nevertheless, cities are building less direct or non-economic offerings to talents to decide on the places for both their career and choice of residence. China Youth Daily has revealed a survey exhibiting that more than 60 percent of the participants treat the cultural soft power and environmental protection as the most important factors when regarding a city as attractive . In addition, 51 percent of respondents prefer cities with smart technology.  
+
+One of the reasons for the inflow of migrants into Jiangsu province is because of its cultural environment’s attractiveness for talents to study and work. Being the capital of the Wu states historically, Suzhou was once the cultural center of Wu operas, poems, calligraphies, and paintings. As the homeland to scholars in successive dynasties and many talents of today, Suzhou continues to provide opportunities for research institutions, both domestic and local universities, and start-ups, to share the resources in the integrated region, where the NUSRI is located at, the Suzhou Dushu Lake Higher Education Town. From the website of the management committee , it shows that this education town has attracted more than 29 institutions to open their extensions here, which including the University of Oxford and Renmin University of China. Additionally, research centers such as the Huawei Suzhou Research Center and Microsoft Suzhou Research Center are set up in this innovative region supported by the supply of highly-educated researches. Also, start-ups investing in biotechnology, microelectronics, and information system are given incentives to initiate their business in the education town, which enables them to collaborate with one another to achieve better future prospects. By carrying the vision of talent fostering, it also injects new technology and skills to make the zone to generate innovation in the long run.  
+
+The Dream Town, located in the ancient town in the Cangqian town of Hangzhou, also conserves its original cultural identifications and provides incentives and one-step working and living space for start-ups to implement their business. During the field trip at Hangzhou Dream Town, we have observed that the town was built as a scenery place with all the historical houses and buildings remained, which included the home of Zhang Taiyan, who was the well-known philologist in Chinese history. Also, since the spot was established at Cangqian, which accommodates villages and granaries in the past , the technological zone keeps the natural ecosystem and the renovate the original building to serve as incubators for entrepreneurship. Incentives are offered to start-ups who have creative plans, and the rental charge of the working space will be waived. Additionally, subsidies for flat rental are also provided to attract talents to reside in Hangzhou and contributed to local economic development growth. One-steps services are also provided for talents throughout their process of initiating the business. 
+ 
+Figure 2
+Source: Official Webpage of Hangzhou Dream Town
+
+As can be seen from figure 2, which is an extract from the official website of the dream town, start-ups can easily look for applications to join, and professional services will be in place to assist them throughout the process. 
+
+The Dream Town is not the only district for technology and entrepreneurship. It is only one of the masterplans of the Zhejiang Hangzhou Future Sci-tech City  (also known as Zhejiang Overseas High-level Talents Innovation Park). The innovation park is designed to collaborate with well-known universities such as Zhejiang University to implement their strategic plans to attract both domestic and overseas talents to conduct their research and business in the region as an integrated system. These all serve to create an environment with both traditional culture but also the atmosphere of innovation and entrepreneurship to encourage talents to start their business in the city. This can be further proved by the fact that the 2019 Digital Economy and Talent Development Report for China’s Yangtze River Delta Region indicates that Hangzhou is the most appealing city for digital talent domestically.
+
+Hosting international events is another way to create global influence and ultimately attract opportunities. Events such as sports games, business forums, and global summits allow the media mass to report the development stages, including preparation and the ongoing process, as well as the results of the event in the hosting city. For instance, Hangzhou held the G20 Summit in 2016, and it was the first city to hold this event in China . As one of the most scenic cities in the world, Hangzhou has managed to reach beyond the influence of its cultural and natural heritage but also impressed the world with instilling technology and innovation in this historical city. According to the Mr. Zhang Handong, the Dean of Zhejiang Business Research Institute , Hangzhou has successfully exhibited its history and culture, and also enabled the world to know about diversified strengths and characteristics of various cities in Zhejiang province. Moreover, innovative companies such as Alibaba and Hikvision, which headquartered in Hangzhou, have further improved their profiles in the global market. These all provide opportunities for Hangzhou to step into internationalization and globalization. 
+
+Moreover, as cities stick to the policy of not abandoning its traditional values and culture, one might have noticed during our visits that the time-honored brands are well preserved by the government at the scenic tourist spot, such as the Qinghefang Ancient Street in Hangzhou and Pingjiang Road in Suzhou. More than eight time-honored brands have set up their branches at the Qinghefang Ancient Street . Furthermore, the cities have been working on establishing museums related to these brands under the policy of revitalizing the time-honored brands . The museums such as the Fan Museum, Silk Museum, and Umbrella Museum  have been built along the Beijing-Hangzhou Grand Canal to introduce the history of these handicrafts and the importance of the roles that different time-honored brands play to sustain the skills. Through educating the public, the generations of today have a better understanding of the culture. Also, to ensure the time-honored brands are competitive in today’s markets, online shops have been introduced where Taobao  collaborated with the government to provide an online space for time-honored brands to promote their products and expand their markets to other regions in China as well as overseas consumers. The incentives given to innovate allows the brands to be preserved and competitive in the long-run.  
+
+## 2.2 Contribution of Internal Soft Power to Rise of China
+
+After listing several plans harnessed by Suzhou and Hangzhou, now one should question how these will ultimately result in an influence on the rise of China. Though we have witnessed how China employed soft power in its diplomatic policies, which is rather direct, combining all the soft power gained by different cities and integrate them to achieve soft power at a more influential level might be a more sustainable way to ensure China’s position. 
+
+At the domestic level, the local governments are better informed about their strengths and cultural background. It is always more efficient for specialists in those regions to identify their development plans. Apart from knowing their hard power, which is the economic capability measured in the GDP they contribute to the country’s sum, soft power is equally important when drafting policies that match the culture of the regions and create their own customized plans. As the world is now shifting focus from primary industry gradually to the tertiary industry, which is the service, human talents should be highly regarded as capital to generate future wealth. Soft power is hence more crucial in helping people to identify the places of residence and where they can pursue their career ambitions with an environment that encourages them to achieve their goals. The culture and tradition of the past will be the core values of the plans, but innovations and creations can still be brought in on top of the initial culture. This will also help China to efficiently allocate its resources where human capitals are free to move to different zones. 
+
+Additionally, as the cities are striving to improve their image in the world, it will benefit the country as a whole in both direct and indirect ways. When hosting international events, cities will be required to meet certain standards, and thus they will improve the current facilities and policies to ensure all the requirements are satisfied. This will speed up the urban infrastructure process and hence benefit the country as development progress. Also, by lifting up their positions in the global market, both tourism and foreign investments will be introduced to the places, bringing more opportunities to China to grow their business. Most importantly, hosting international events, especially for sports games, allow communication and interaction between people from China and those from different countries. The appreciation of Chinese culture will be achieved. This also benefits the country in the way that exporting Chinese export will become increasingly easier in the future due to these cultural exchange events. 
+
+Growing soft power internally can only be sustainable if the country puts in the effort to preserve culture and traditions, which are intangible assets to the regions. Time-honored brands do not only represent the business itself but symbolize the arts and social meanings behind. By revitalizing these brands and inject innovative ideas, it will eventually help China to expand its soft power through commercial goods with deep cultural significance behind them. The trading of these goods will also allow overseas consumers to understand Chinese culture and be more open to accept the local culture.
+
+# 3. Conclusion
+
+China is still growing its soft power, both internally and externally. The key idea is that only through identifying cultural differences and treating them as the foundation for each region to set their development plans, the irreplaceable culture and tradition can be established. Although it may result in a temporary imbalance between different regions regarding their development progress and population inflow or leakage, by promoting the regions to find their own strength based on their cultural background, it will ultimately rationalize the imbalance where every region will have the chance to attract both business and human talents. As a result, China can display its soft power using experiences from developing each region and impress the world with its unique cultural influence. 
+
+
+
+# 4. Reference
+
+Ali Research Institute and 21st Century Economic Research Institute. “ 2019 Yangtze River Delta Digital Economy Index TOP15.” Decision Making, no. 10 (2019).
+Dushu Lake Higher Education Town. “Regional Introduction.” Suzhou Industrial Park Management Committee, January 28, 2019. http://www.sipac.gov.cn/dept/szdshkjcxq/qygk/qyjs/201901/t20190128_980124.htm.
+
+Dream Town. “Dream Town Profile.” Accessed January 19, 2020. http://www.future-mxxz.com/web/main/html/xzgk.html.
+
+Globalfirepower. “2019 Military Strength Ranking.” Globalfirepower. Accessed January 17, 2020. https://www.globalfirepower.com/countries-listing.asp.
+
+“Introduction of the Museum.” Hangzhou Arts and Crafts Museum. Accessed January 16, 2020. http://www.zgdjss.com/#!/app/index.
+
+Lu, Hui, ed. “Cities with Good Environment, Soft Power Well Liked: Survey.” Xinhuanet, December 9, 2018. http://www.xinhuanet.com/english/2018-12/09/c_137661759.htm.
+
+Lang, Kaixin. “Hefang Street Writes a New Chapter in History.” Zhejiangzaixian. Accessed January 18, 2020. http://biz.zjol.com.cn/system/2014/08/20/020208467.shtml.
+
+Ministry of Commerce of PRC. “Notice of the Ministry of Commerce on the Implementation of the ‘Rejuvenation of Time-Honored Brands.’” Ministry of Commerce of PRC, April 10, 2006. http://www.mofcom.gov.cn/aarticle/b/g/200604/20060401910767.html.
+
+Ministry of Commerce of Zhejiang. “ ‘Taobao China-Zhejiang Pavilion’ Officially Launched.” Hexun , April 8, 2015. https://m.hexun.com/tech/2015-04-08/174777523.html.
+
+National Health Commission PRC. “ 2016 National Migrant Population Dynamics Monitoring Survey Data.” Migrant Population Service Centre, October 16, 2017. http://www.chinaldrk.org.cn/wjw/#/home.
+
+Nye, Joseph Samuel. “Public Diplomacy and Soft Power.” JSTOR. Accessed January 17, 2020. https://www.jstor.org/stable/25097996?seq=1#metadata_info_tab_contents.
+
+Preen, Mark. “The Yangtze River Delta Integration Plan.” China Briefing, June 6, 2018. https://www.china-briefing.com/news/yangtze-river-delta-integration-plan/.
+
+Quan, Chris. “Hangzhou or Suzhou: Which Is Best for You to See?” China Highlights. Accessed September 20, 2019. https://www.chinahighlights.com/hangzhou/visit-hangzhou-or-suzhou.htm.
+
+The World Bank. “The World Bank In China.” The World Bank, December 13, 2019. https://www.worldbank.org/en/country/china/overview.
+USnews. “Power.” USnews. Accessed January 17, 2020. https://www.usnews.com/news/best-countries/power-rankings.
+
+Wang, Yanping. “The Digital Transformation of China’s Yangtze River Delta.” Linkedin, October 22, 2018. https://economicgraph.linkedin.com/blog/the-digital-transformation-of-chinas-yangtze-river-delta.
+
+Wang, Yue. “What We Know About China's G20 Summit Host City, Hangzhou.” Forbes, September 2, 2016. https://www.forbes.com/sites/ywang/2016/09/02/what-we-know-about-chinas-g20-summit-host-city-hangzhou/#7f83f89d175f.
+
+Ye, Ke, ed. “From ‘Tourism City’ to ‘Innovation Hub’：Hangzhou Is Raising Its Profile.” In Zhejiang, September 4, 2019. http://inzj.zjol.com.cn/News/201909/t20190904_10950681.shtml.
+
+Zhang, Handong. “Seize the Opportunity of G20 to Enhance Zhejiang's International Competitiveness.” Zhejiang Economy, no. 19 (2016).

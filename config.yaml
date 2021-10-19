@@ -82,22 +82,22 @@ params:
         subtitle: Feugiat Amet Tempus
         title: Risk Return of DJIA Industrial Average
         url: blogs/risk_return
-      - image: pic03.jpg
+      - image: GDP_cover.jpg
         subtitle: India, Germany, US
         title: GDP Components Analysis
         url: blogs/gdp_countries
       - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
+        subtitle: Yangtze River Delta
+        title: Field Trip to China
+        url: blogs/china_field
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Consequat
-        url: blogs/ipsum
+        url: blogs/china_field
       - image: pic06.jpg
         subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+        title: About Hangzhou
+        url: blogs/hangzhou
   two:
     buttonText: Get Started
     enable: yes
