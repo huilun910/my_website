@@ -85,10 +85,10 @@ params:
         subtitle: Monthly Changes in TfL bike rentals 
         title: Excess Rentals in TfL Bike Sharing
         url: blogs/tfl_bike
-      - image: travel.jpg
-        subtitle: Travel
-        title: Album
-        url: blogs/album
+      - image: resume.jpg
+        subtitle: Huilun's resume
+        title: Huilun's Work Profile
+        url: blogs/cv
       - image: Hangzhou.jpg
         subtitle: My Hometown
         title: A Glimpse of Hangzhou

@@ -5,19 +5,36 @@ categories:
 date: "2021-10-20"
 description: City of Hangzhou
 draft: false
-image: ""
+#image: Hangzhou.jpg
 keywords: ""
 slug: hangzhou
-title: City of Hangzhou (Photo by Huilun)
+title: City of Hangzhou 
 ---
+*Photo by Huilun*
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+## Lingering Snow on the Broken Bridge
+```{r, pic1, echo = FALSE}
+knitr::include_graphics("/img/blogs/Hangzhou2.jpg",error =FALSE)
 ```
 
-```{r, echo=FALSE}
+## Gem Hill Floating in Rosy Clouds
+```{r, pic2, echo = FALSE}
+knitr::include_graphics("/img/blogs/Hangzhou3.jpg",error =FALSE)
+```
 
-knitr::include_graphics(here::here("static", "img", "blogs", "Hangzhou01.jpg"), error = FALSE)
+## Night of Beishan Road
+```{r, pic3, echo = FALSE}
+knitr::include_graphics("/img/blogs/Hangzhou.jpg",error =FALSE)
+```
 
+## Spring of Prince Bay Park
+```{r, pic4, echo = FALSE}
+knitr::include_graphics("/img/blogs/Hangzhou4.jpg",error =FALSE)
+```
+
+## Lotus in the Breeze at Crooked Courtyard
+```{r, pic5, echo = FALSE}
+knitr::include_graphics("/img/blogs/Hangzhou5.jpg",error =FALSE)
 ```
 
