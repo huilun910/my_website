@@ -15,16 +15,7 @@ title: Excess Rentals in TfL Bike Sharing
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<pre class="r"><code>url &lt;- &quot;https://data.london.gov.uk/download/number-bicycle-hires/ac29363e-e0cb-47cc-a97a-e216d900a6b0/tfl-daily-cycle-hires.xlsx&quot;
-
-# Download TFL data to temporary file
-httr::GET(url, write_disk(bike.temp &lt;- tempfile(fileext = &quot;.xlsx&quot;)))</code></pre>
-<pre><code>## Response [https://airdrive-secure.s3-eu-west-1.amazonaws.com/london/dataset/number-bicycle-hires/2021-09-23T12%3A52%3A20/tfl-daily-cycle-hires.xlsx?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJJDIMAIVZJDICKHA%2F20211019%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211019T222001Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=0c6409139feec00d07552660d827e7c1520f33b8bce7f70a0e8a927e8bf9efc4&amp;X-Amz-SignedHeaders=host]
-##   Date: 2021-10-19 22:23
-##   Status: 200
-##   Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-##   Size: 174 kB
-## &lt;ON DISK&gt;  C:\Users\mcl\AppData\Local\Temp\RtmpuKmWnu\file7b0c3c1d4be9.xlsx</code></pre>
+<p>I first tidy up the data frame to reformat year, month and week for use in later parts.</p>
 <pre class="r"><code># Use read_excel to read it as dataframe
 bike0 &lt;- read_excel(bike.temp,
                    sheet = &quot;Data&quot;,
@@ -37,6 +28,7 @@ bike &lt;- bike0 %&gt;%
   mutate (year = year(day),
           month = lubridate::month(day, label = TRUE),
           week = isoweek(day))</code></pre>
+<p>Let’s take a look at the cleaned data set.</p>
 <pre class="r"><code>head(bike)</code></pre>
 <pre><code>## # A tibble: 6 x 5
 ##   day                 bikes_hired  year month  week
@@ -47,6 +39,7 @@ bike &lt;- bike0 %&gt;%
 ## 4 2010-08-02 00:00:00        6642  2010 Aug      31
 ## 5 2010-08-03 00:00:00        7966  2010 Aug      31
 ## 6 2010-08-04 00:00:00        7893  2010 Aug      31</code></pre>
+<p>I then compute the expected rentals per month for years from 2016 to 2021.</p>
 <pre class="r"><code>updated_bike &lt;- bike %&gt;% 
   filter (year &gt;2015) %&gt;% 
   group_by(month, year) %&gt;% 
@@ -55,9 +48,9 @@ bike &lt;- bike0 %&gt;%
 <pre class="r"><code>updated_bike_2016_2019 &lt;- bike %&gt;% 
   filter (year &gt;2015 &amp; year&lt; 2020) %&gt;% 
   group_by (month) %&gt;% 
-  summarise (expected_rental = mean(bikes_hired)) #expected rentals per month
-
-final_bike &lt;- left_join(updated_bike, updated_bike_2016_2019) %&gt;% 
+  summarise (expected_rental = mean(bikes_hired)) #expected rentals per month</code></pre>
+<p>I then find the excess rental by finding the difference between the actual and expected rental. I include a condition that if the actual is more than expected, its value is recorded under up and expected rentals will be recorded as down, vice versa. It creates boundaries which will serve the visualisation later.</p>
+<pre class="r"><code>final_bike &lt;- left_join(updated_bike, updated_bike_2016_2019) %&gt;% 
   mutate (excess_rentals= actual_mean_rental - expected_rental,
           up= ifelse(actual_mean_rental &gt; expected_rental, actual_mean_rental, 
                      expected_rental),
@@ -75,6 +68,7 @@ final_bike &lt;- left_join(updated_bike, updated_bike_2016_2019) %&gt;%
 ## 4 Jan    2019             22123.          20617.         1505.  22123. 20617.
 ## 5 Jan    2020             22893.          20617.         2276.  22893. 20617.
 ## 6 Jan    2021             13218.          20617.        -7399.  20617. 13218.</code></pre>
+<p>We can then plot a graph to see the changes of up and downs for bike rentals. I coloured the plot in the way that if actual if higher than expected return, the region will be shaded in green colour, and it will be shaded in red if the other way around.</p>
 <pre class="r"><code>ggplot(final_bike, aes(x=month, y= actual_mean_rental)) +
   geom_line(aes(group=1)) + #actual values
   geom_line(aes(y= expected_rental, group=1), size=0.8, color= &quot;blue&quot;) + 
@@ -88,7 +82,8 @@ final_bike &lt;- left_join(updated_bike, updated_bike_2016_2019) %&gt;%
   labs(y = &quot;Bike Rentals&quot;,
        title= &quot;Monthly changes in TFL bike rentals&quot;,
        subtitle= &quot;Change from monthly average shown in blue and calculated between 2016-2019&quot;)</code></pre>
-<p><img src="/blogs/tfl_bike_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/blogs/tfl_bike_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>We can observe thatin 2016 to 2019, the excess rentals stay in the same dimension (positive or negative) for a period up to half a year then alternated to the other way. However, in 2020 and 2021, there are more fluctuations in changing excess rentals.</p>
 <pre class="r"><code>bike_change &lt;- bike %&gt;% 
   filter((year &gt;= 2016 &amp; year &lt;= 2020) | (year == 2021 &amp; week &lt;53)) %&gt;%
   group_by(week,year) %&gt;%
@@ -97,12 +92,11 @@ final_bike &lt;- left_join(updated_bike, updated_bike_2016_2019) %&gt;%
   group_by(week) %&gt;% 
   mutate(average_each_week = median(bikes_each_week), #median bikes in same week 
          excess_rentals_percentage = 
-           (bikes_each_week - average_each_week)/average_each_week)
+           (bikes_each_week - average_each_week)/average_each_week) %&gt;% 
   replace_na(list(
     excess_rentals_percentage = 1
   )) </code></pre>
-<pre><code>## $excess_rentals_percentage
-## [1] 1</code></pre>
+<p>The second plot looks at percentage changes from the expected level of weekly rentals. The two grey shaded rectangles correspond to Q2 (weeks 14-26) and Q4 (weeks 40-52).</p>
 <pre class="r"><code>ggplot(bike_change, aes(x = week, y = excess_rentals_percentage))+
   scale_x_continuous(breaks = seq(0, 53, by = 13)) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
@@ -134,4 +128,5 @@ final_bike &lt;- left_join(updated_bike, updated_bike_2016_2019) %&gt;%
     caption = &quot;Source: TfL, London Data Store&quot;,
   ) +
   NULL </code></pre>
-<p><img src="/blogs/tfl_bike_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/blogs/tfl_bike_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>We can observe that in 2020, there is a greater fluctuation in weekly changes, and it might be due to the covid-19 pandemic situation where people’s commuting behaviours can be easily affected by government policies on lock-downs or the worsening situation of the pandemic.</p>

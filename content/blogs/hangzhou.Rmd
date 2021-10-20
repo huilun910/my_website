@@ -1,0 +1,23 @@
+---
+categories:
+- ""
+- ""
+date: "2021-10-20"
+description: City of Hangzhou
+draft: false
+image: ""
+keywords: ""
+slug: hangzhou
+title: City of Hangzhou (Photo by Huilun)
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+
+knitr::include_graphics(here::here("static", "img", "blogs", "Hangzhou01.jpg"), error = FALSE)
+
+```
+

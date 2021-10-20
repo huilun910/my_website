@@ -16,7 +16,7 @@ title: GDP Components Analysis for Different Countries
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r load-libraries, echo=FALSE}
+```{r load-libraries, include=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(mosaic)
 library(ggthemes)
@@ -31,6 +31,8 @@ library(infer)
 library(openintro)
 ```
 
+The GDP data I will analyze is from the [United Nations' National Accounts Main Aggregates Database](https://unstats.un.org/unsd/snaama/Downloads), which contains estimates of total GDP and its components for all countries from 1970 to today. I will look at how GDP and its components have changed over time, and compare different countries and how much each component contributes to that country's GDP. 
+
 ```{r read_GDP_data}
 
 UN_GDP_data  <-  read_excel(here::here("data", "Download-GDPconstant-USD-countries.xlsx"), # Excel filename
@@ -41,6 +43,7 @@ UN_GDP_data  <-  read_excel(here::here("data", "Download-GDPconstant-USD-countri
 head(UN_GDP_data)
 
 ```
+The first thing I did is to tidy the data, as it is in wide format and so I have to make it into long, tidy format, and express all figures in billions (divide values by 1e9).
 
 ```{r reshape_GDP_data}
 
@@ -54,15 +57,22 @@ tidy_GDP_data  <- UN_GDP_data %>%
 
 head(tidy_GDP_data)
 ```
+I will then find the indicator names to prepare renaming the indicators into something shorter in later parts.
+
 ```{r, fig.width = 8, fig.height = 8}
 country_list <- c("United States","India", "Germany") #Compare GDP components for these 3 countries
 
 
 unique(tidy_GDP_data[c("IndicatorName")])
 ```
+I will rename long format of indicator names into a shorter format now.
 
 ```{r, fig.width = 10, fig.height = 6}
-raw_GDP_component_list <- c("Gross capital formation", "Exports of goods and services", "General government final consumption expenditure", "Household consumption expenditure (including Non-profit institutions serving households)", "Imports of goods and services", "Gross Domestic Product (GDP)")
+raw_GDP_component_list <- c("Gross capital formation", "Exports of goods and services", 
+                            "General government final consumption expenditure", 
+                            "Household consumption expenditure (including Non-profit institutions serving households)", 
+                            "Imports of goods and services", 
+                            "Gross Domestic Product (GDP)")
 
 GDP_component_list <- c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure","Imports","GDP")
 
@@ -71,12 +81,20 @@ three_countries_data <- tidy_GDP_data %>%
   mutate(IndicatorName = factor(IndicatorName,
                                 levels = raw_GDP_component_list,
                                 labels = GDP_component_list)) %>% 
-    filter(IndicatorName %in% GDP_component_list) 
+    filter(IndicatorName %in% GDP_component_list)
+```
 
+I need to filter out indicator name of GDP because it is not considered as a GDP component itself. 
+
+```{r, fig.width = 10, fig.height = 6}
 three_countries_data_no_GDP <- three_countries_data %>% 
   filter(IndicatorName != "GDP")
+```
 
-#head(plot_three_countries)
+
+Here, I plot GDP components over time for India, US and Germany.
+
+```{r, fig.width = 10, fig.height = 6}
 
 plot_three_countries <- ggplot(three_countries_data_no_GDP, aes(x = Year, 
                                  y = Country_GDP, 
@@ -98,3 +116,143 @@ plot_three_countries
 
 
 ```
+
+Secondly, since GDP is the sum of Household Expenditure (Consumption *C*), Gross Capital Formation (business investment *I*), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator `Gross Domestic Product (GDP)` in the dataframe, I would like to calculate it given its components discussed above.
+
+```{r}
+GDP_component_cleaned_list <- c("Gross_capital_formation", 
+                                "Exports", 
+                                "Government_expenditure", 
+                                "Household_expenditure",
+                                "Imports",
+                                "GDP")
+
+
+original_GDP_data <- three_countries_data %>% 
+    mutate(IndicatorName = factor(IndicatorName,
+                                levels = GDP_component_list,
+                                labels = GDP_component_cleaned_list)) %>% 
+  select(Country,IndicatorName,Country_GDP,Year) %>% 
+  pivot_wider(names_from = IndicatorName,
+              values_from = Country_GDP) %>% 
+  mutate(GDP_calculated = Household_expenditure + Government_expenditure + Gross_capital_formation + Exports - Imports,
+         #GDP_proportion = abs(GDP_calculated - GDP)/GDP,
+         Household_expenditure_proportion = Household_expenditure / GDP,
+         Government_expenditure_proportion = Government_expenditure / GDP,
+         Gross_capital_formation_proportion = Gross_capital_formation / GDP,
+         Net_Exports_proportion = (Exports - Imports) / GDP)
+
+
+head(original_GDP_data)
+
+```
+
+I will then plot the difference between the actual and calculated GDP over years for the three countries.
+
+```{r, fig.width = 12, fig.height = 5}
+#Find difference between actual and calculated GDP
+diff_GDP_data <- three_countries_data %>% 
+    mutate(IndicatorName = factor(IndicatorName,
+                                levels = GDP_component_list,
+                                labels = GDP_component_cleaned_list)) %>%
+  select(Country,IndicatorName,Country_GDP,Year) %>% 
+  pivot_wider(names_from = IndicatorName,
+              values_from = Country_GDP) %>% 
+  mutate(GDP_calculated = Household_expenditure + Government_expenditure + Gross_capital_formation + Exports - Imports,
+         GDP_diff_proportion = abs(GDP_calculated - GDP)/GDP)
+
+plot_diff<- ggplot(diff_GDP_data, aes(x = Year, y = GDP_diff_proportion, group = Country, colour = Country)) +
+  scale_x_discrete(breaks = seq(1970, 2020, by = 10)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  geom_line(size = 0.9) +
+  theme_bw()+
+  labs (
+    title = "% difference between what calculated as GDP and the GDP figure",
+    x = "",
+    y = "proportion" ) + 
+  guides(color=guide_legend(title="Country")) +
+  NULL
+
+  
+plot_diff
+
+```
+
+From the plot, we can observe that India has big difference, others not, having had 2% difference in latest year, maybe as bussiness investment (large part of India’s GDP) can be reported very differently to other countries listed, due to various differences in legal frameworks and reporting regulations.
+
+Then, I will plot a graph displaying the proportion of government expenditure, gross capital formation and net export as a proportion of actual GDP.
+
+```{r,fig.width = 12, fig.height = 5}
+#Component as a proportion of original GDP (replicating the graph)
+
+plot_GDP_percent_diff <- original_GDP_data %>% 
+  pivot_longer(cols = 11:13, #columns 11 to 13
+               names_to = "Component",
+               values_to = "Proportion") 
+
+ggplot(plot_GDP_percent_diff, aes(x = Year, 
+                                 y = Proportion, 
+                                 group = Component, 
+                                 colour = Component))+
+  scale_x_discrete(breaks = seq(1970, 2020, by = 10)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  geom_line(size = 0.9) +
+  facet_wrap(vars(Country), scales = "free_x") +
+  theme_bw()+
+  labs (
+    title = "GDP components over time",
+    x = "",
+    y = "proportion") + 
+  guides(color=guide_legend(title="")) +
+  NULL
+
+
+```
+Subsequently, I will plot a graph displaying the proportion of government expenditure, gross capital formation and net export as a proportion of calculated GDP.
+
+```{r,fig.width = 12, fig.height = 5}
+#Component as a proportion of calculated GDP
+
+calculated_GDP_data <- three_countries_data %>% 
+    mutate(IndicatorName = factor(IndicatorName,
+                                levels = GDP_component_list,
+                                labels = GDP_component_cleaned_list)) %>%
+  select(Country,IndicatorName,Country_GDP,Year) %>% 
+  pivot_wider(names_from = IndicatorName,
+              values_from = Country_GDP) %>% 
+  mutate(GDP_calculated = Household_expenditure + Government_expenditure + Gross_capital_formation + Exports - Imports,
+         Household_expenditure_proportion = Household_expenditure / GDP_calculated,
+         Government_expenditure_proportion = Government_expenditure / GDP_calculated,
+         Gross_capital_formation_proportion = Gross_capital_formation / GDP_calculated,
+         Net_Exports_proportion = (Exports - Imports) / GDP_calculated)
+
+plot_calculated_GDP <- calculated_GDP_data %>% 
+  pivot_longer(cols = 11:13, #columns 11 to 13
+               names_to = "Component",
+               values_to = "Proportion") 
+
+ggplot(plot_calculated_GDP, aes(x = Year, 
+                                 y = Proportion, 
+                                 group = Component, 
+                                 colour = Component))+
+  scale_x_discrete(breaks = seq(1970, 2020, by = 10)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  geom_line(size = 0.9) +
+  facet_wrap(vars(Country), scales = "free_x") +
+  theme_bw()+
+  labs (
+    title = "GDP and its breakdown at constant 2010 prices in US Dollars",
+    x = "",
+    y = "proportion" ) + 
+  guides(color=guide_legend(title="")) +
+  NULL
+
+
+
+```
+
+From the two plots above, I can observe that India shows a large increase in investments (related to the post-1991 economic growth, particularly in the tech sector, with foreign investment there having grown massively), also showing household expenditure proportion dropping (development related, as more households have more disposable income), but still has a lower government expenditure)
+
+The US is experiencing net exports dropping, partly due to cheaper manufacturing elsewhere, marking its transition to a service economy, and also drop in government expenditure, perhaps marking the turn towards austerity post-recessions.However, it still shows stability in gross capital formation.
+
+Germany is showing a rise in net exports, odd for a Western nation, and is table on other fronts.
