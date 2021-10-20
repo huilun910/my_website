@@ -65,7 +65,8 @@ params:
       - name: Blogs
         url: blogs
     menu: Menu
-    title: Huilun's Personal Website
+    title: Huilun
+    subtitle: Portfolio Website
   tiles:
     enable: yes
     showcase:
